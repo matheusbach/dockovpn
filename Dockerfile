@@ -1,6 +1,4 @@
-FROM alpine:3.14.1
-
-LABEL maintainer="Alexander Litvinenko <array.shift@yahoo.com>"
+FROM alpine:3
 
 # System settings. User normally shouldn't change these parameters
 ENV APP_NAME Dockovpn
@@ -19,7 +17,7 @@ COPY scripts .
 COPY config ./config
 COPY VERSION ./config
 
-RUN apk add --no-cache openvpn easy-rsa bash netcat-openbsd zip dumb-init && \
+RUN apk add --no-cache openvpn iptables ipcalc easy-rsa bash netcat-openbsd zip dumb-init && \
     ln -s /usr/share/easy-rsa/easyrsa /usr/bin/easyrsa && \
     mkdir -p ${APP_PERSIST_DIR} && \
     # Copy FROM ./scripts/server/conf TO /etc/openvpn/server.conf in DockerFile
