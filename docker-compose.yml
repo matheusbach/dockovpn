@@ -9,6 +9,8 @@ services:
         - NET_ADMIN
     ports:
         - 1194:1194/udp
+        - 51413:51413
+        - 55555:55555
     environment:
         HOST_ADDR: ${HOST_ADDR} 
     volumes:
