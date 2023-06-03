@@ -9,6 +9,7 @@ services:
         - NET_ADMIN
     ports:
         - 1194:1194/udp
+        - 80:8080/tcp
         - 51413:51413
         - 55555:55555
     environment:
