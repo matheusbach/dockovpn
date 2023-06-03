@@ -4,7 +4,7 @@
 version: '3'
 services:
   dockovpn:
-    image: alekslitvinenk/openvpn
+    build: .
     cap_add:
         - NET_ADMIN
     ports:
