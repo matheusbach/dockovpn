@@ -67,7 +67,7 @@ fi
 # Set default value to IPV4_CIDR if it was not set from environment
 if [ -z "$IPV4_CIDR" ]
 then
-    IPV4_CIDR='10.0.0.0/24'
+    IPV4_CIDR='10.8.0.0/24'
 fi
 
 # write server network by IPV4_CIDR into server.conf
