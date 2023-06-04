@@ -8,7 +8,7 @@ function datef() {
 
 function createConfig() {
     cd "$APP_PERSIST_DIR"
-    CLIENT_ID="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
+    CLIENT_ID="$(cat /dev/urandom | tr -dc 'a-z' | fold -w 16 | head -n 1)"
     CLIENT_PATH="$APP_PERSIST_DIR/clients/$CLIENT_ID"
 
     echo yes | easyrsa build-client-full "$CLIENT_ID" nopass
