@@ -11,7 +11,7 @@ function createConfig() {
     CLIENT_ID="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"
     CLIENT_PATH="$APP_PERSIST_DIR/clients/$CLIENT_ID"
 
-    easyrsa build-client-full "$CLIENT_ID" nopass < $(echo yes)
+    easyrsa build-client-full "$CLIENT_ID" nopass < $(echo 'yes)
     # Writing new private key to '/usr/share/easy-rsa/pki/private/client.key
     # Client sertificate /usr/share/easy-rsa/pki/issued/client.crt
     # CA is by the path /usr/share/easy-rsa/pki/ca.crt
