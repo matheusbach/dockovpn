@@ -36,7 +36,7 @@ function createConfig() {
     # Append client id info to the config
     echo ";client-id $CLIENT_ID" >> "$CLIENT_PATH/client.ovpn"
     
-    echo created certs"
+    echo $CLIENT_PATH"
 }
 
 function zipFiles() {
