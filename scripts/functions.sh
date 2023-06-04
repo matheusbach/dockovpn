@@ -11,7 +11,7 @@ function createConfig() {
     CLIENT_ID="$(cat /dev/urandom | tr -dc 'a-z' | fold -w 16 | head -n 1)"
     CLIENT_PATH="$APP_PERSIST_DIR/clients/$CLIENT_ID"
 
-    echo yes | easyrsa build-client-full "$CLIENT_ID" nopass
+    easyrsa build-client-full "$CLIENT_ID" nopass -y
     # Writing new private key to '/usr/share/easy-rsa/pki/private/client.key
     # Client sertificate /usr/share/easy-rsa/pki/issued/client.crt
     # CA is by the path /usr/share/easy-rsa/pki/ca.crt
@@ -36,7 +36,7 @@ function createConfig() {
     # Append client id info to the config
     echo ";client-id $CLIENT_ID" >> "$CLIENT_PATH/client.ovpn"
     
-    echo $CLIENT_PATH"
+    echo $CLIENT_PATH
 }
 
 function zipFiles() {
