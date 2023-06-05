@@ -26,6 +26,8 @@ EOF
     cp config/client.ovpn $CLIENT_PATH
 
     echo -e "\nremote $HOST_ADDR $HOST_TUN_PORT" >> "$CLIENT_PATH/client.ovpn"
+    
+    sed -i '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/!d'  "$CLIENT_PATH/$CLIENT_ID.crt"
 
     # Embed client authentication files into config file
     cat <(echo -e '<ca>') \
